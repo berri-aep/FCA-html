@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+    body{
+        @apply font-primary overflow-x-hidden;
+    }
+    .container{
+        @apply max-w-[1600px] w-full px-4 mx-auto;
+    }
+}
+
+@layer components{
+    /* HEADER */
+    
+    .toggle__menu span{
+        @apply bg-black h-1 m-0.5 block w-10 transition-all duration-500;
+    }
+
+    .toggle__menu{
+        @apply z-20 lg:hidden  transition-all duration-500;
+    }
+
+    .toggle__menu.open{
+        @apply rotate-[180deg] -translate-x-1 transition-all duration-500;
+    }
+
+    
+    .toggle__menu.open span:first-child{
+        @apply h-1.5 w-[1.5rem] rotate-[125deg] -translate-x-3 rounded-md transition-all duration-500;
+    }
+
+    .toggle__menu.open span:nth-child(2){
+        @apply h-1.5 w-[2rem] rounded-md -translate-x-2 transition-all duration-700;
+    }
+    .toggle__menu.open span:last-child{
+        @apply h-1.5 w-[1.5rem] -rotate-[125deg] -translate-x-3 rounded-md transition-all duration-500;
+    }
+
+    .header__nav-all{
+        @apply z-10 bg-white -right-[100%] fixed  h-screen w-full  justify-center text-center transition-all duration-500;
+    }
+
+    .header__nav-all.open{
+        @apply right-0 transition-all duration-300;
+    }
+
+    .header__nav1 li{
+        @apply border-r-2 pr-10;
+    }
+
+    .header__nav1 li:last-child{
+        @apply border-none
+    }
+
+    /* footer */
+    .footer__middle{
+        @apply grid grid-cols-3;
+    }
+
+    /* FAQ CARD */
+    .faq__content--card{
+         @apply mb-5 max-w-[35rem] mx-auto lg:max-w-[70rem];
+    }
+
+    .faq__content--card h4, .faq__content--card h4 i{
+        @apply bg-gray-300 text-black px-3 py-2 font-bold transition-all flex justify-between items-center cursor-pointer duration-700;
+    }
+
+    .faq__content--card i.open{
+         @apply rotate-[180deg] transition-all duration-700 ;
+    }
+
+    .faq__content--card--detail{
+         @apply bg-gray-300 text-black h-auto max-h-0 overflow-hidden transition-all text-justify duration-700;
+    }
+
+    .faq__content--card--detail.open{
+        @apply max-h-[50rem] bg-gray-300 text-black p-3 transition-all text-justify duration-700;
+    }
+
+    .faq__navi.active{
+        @apply text-accent underline
+    }
+
+    .faq__category{
+        @apply hidden;
+    }
+
+    .faq__navi{
+        @apply text-xl;
+    }
+
+    .faq__category.active{
+        @apply block;
+    }
+
+    .faq__content--card small{
+        @apply hidden lg:flex pr-5;
+    }
+
+    .faq__content--card span{
+        @apply flex lg:items-center;
+    }
+
+    .faq__content--card--detail .fa-solid{
+        @apply text-accent pr-3;
+    }
+    .faq__content--card--detail .fa-regular{
+        @apply pr-3;
+    }
+
+    .faq__content--card--detail li{
+        @apply list-none items-start gap-2;
+    }
+
+}
